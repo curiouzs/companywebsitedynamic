@@ -1,50 +1,13 @@
 {% extends "website/base.html" %}
+
 {% block content %}
-    <div class="id">
-        <div>
-            <div class="img">
-            <h2>FOUNDER AND CHAIRMAN</h2>
-            <img src="/static/img/chris.jpg" alt="chairman" height="270px" width="270px">
-            </div>  
-            <h3><u>CHRIS HEMSWORTH</u></h3> <br> <br><br>
+        <div class="row">
+        {% for people in peoples %}
+            <div class="column">                
+                <div class="designation"><strong>{{ people.designation }}</strong></div>
+                <img src="{{ people.photo.url }}" alt="executive image" width="270" height="270">
+                <div class="membername"><strong><u>{{ people.name }}</u></strong></div>
+            </div>
+            {% endfor %}
         </div>
-        <div>
-            <div class="img">
-            <h2>CHIEF EXECUTIVE OFFICER</h2>
-            <img src="/static/img/rdf.jpg" alt="chairman" height="270px" width="270px">
-        </div>            
-            <h3><u>ROBERT DOWNEY JUNIOR</u></h3> <br> <br> <br>
-        </div>
-
-        <div>
-            <div class="img">
-            <h2>DIRECTOR OF ENGINEERING</h2>
-            <img src="/static/img/tom.jpg" alt="chairman" height="270px" width="270px">
-        </div>
-            <h3><u>TOM CRUISE</u></h3> <br> <br> <br>
-        </div>
-        <div>
-            <div class="img">
-            <h2>SOFTWARE ANALYST AND CONSULTANT</h2>
-            <img src="/static/img/shinsike.jpg" alt="chairman" height="270px" width="270px">
-        </div>            
-            <h3><u>SHINSUKE NAKAMURA</u></h3> <br> <br> <br>
-        </div>
-        
-        <div>
-            <div class="img">
-            <h2>CHIEF FINANCIAL OFFICER</h2>
-            <img src="/static/img/evans.jpg" alt="chairman" height="270px" width="270px">
-        </div>           
-            <h3><u>CHRIS EVANS</u></h3> <br><br><br>
-        </div>
-        <div>
-            <div class="img">
-            <h2>MANAGING DIRECTOR</h2>
-            <img src="/static/img/rock.jpg" alt="chairman" height="270px" width="270px">
-        </div>          
-            <h3><u>DWAYNE JOHNSON</u></h3> <br><br><br>
-        </div>
-
-    </div>
 {% endblock  %}

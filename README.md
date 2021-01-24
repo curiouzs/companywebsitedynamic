@@ -95,150 +95,40 @@ Publish the website in the given URL.
 {% extends "website/base.html" %}
 
 {% block content %}
-    <div class="productcontent">    
-    <h1 style="text-align: center;"> Our Premium Products</h1>
+<div class="productcontent">
+    <h1 id="premium">Our Premium Products</h1>
     <div class="productitems">
-        <div class="productitem"> 
+        {% for products in productss %}
+        <div class="productitem">
+            
+            <div class="productsname"><strong>{{ products.name }}</strong></div>
             <div class="itemimage">
-            <img src="/static/img/c1.jpg" alt="product image">
+                <img src="{{ products.photo.url }}" alt="product image" height="270" width="270">
             </div>
-            <div class="itemname">4GB DDRA4 laptop memory</div>
-            <div class="itemprice">Price: Rs.2000.00 </div>
+            <div class="productsprice"><strong>RS.{{ products.price }}.00</strong></div>
+            <hr>
         </div>
-        <div class="productitem"> 
-            <div class="itemimage">
-            <img src="/static/img/c2.jpg"  alt="product image">
-            </div>
-            <div class="itemname">1TB Laptop HDD</div>
-            <div class="itemprice">Price: Rs.5000.00 </div>
-        </div>
-        <div class="productitem"> 
-            <div class="itemimage">
-            <img src="/static/img/c3.jpg"  alt="product image">
-            </div>
-            <div class="itemname">1TB Hard Disk</div>
-            <div class="itemprice">Price: Rs.25000.00 </div>
-        </div> <br> <br> <br> <br> <hr>
-        <div class="productitem"> 
-            <div class="itemimage">
-            <img src="/static/img/c4.jpg"  alt="product image">
-            </div>
-            <div class="itemname">Intel SSD</div>
-            <div class="itemprice">Price: Rs.12000.00 </div>
-        </div>
-        <div class="productitem"> 
-            <div class="itemimage">
-            <img src="/static/img/c5.jpg"  alt="product image">
-            </div>
-            <div class="itemname">Intel i3 Processor</div>
-            <div class="itemprice">Price: Rs.1900.00 </div>
-        </div>
-        <div class="productitem"> 
-            <div class="itemimage">
-            <img src="/static/img/c6.jpg"  alt="product image">
-            </div>
-            <div class="itemname">Bluetooth Adapter</div>
-            <div class="itemprice">Price: Rs.1300.00 </div>
-        </div> <br> <br> <br> <br> <hr>
-        <div class="productitem"> 
-            <div class="itemimage">
-            <img src="/static/img/c7.jpg"  alt="product image">
-            </div>
-            <div class="itemname">Apple ibeats</div>
-            <div class="itemprice">Price: Rs.2100.00 </div>
-        </div>
-        <div class="productitem"> 
-            <div class="itemimage">
-            <img src="/static/img/c8.jpg"  alt="product image">
-            </div>
-            <div class="itemname">Modem </div>
-            <div class="itemprice">Price: Rs.3400.00 </div>
-        </div>
-        <div class="productitem"> 
-            <div class="itemimage">
-            <img src="/static/img/c9.jpg"  alt="product image">
-            </div>
-            <div class="itemname">Apple Airpods</div>
-            <div class="itemprice">Price: Rs.1400.00 </div>
-        </div> <br> <br> <br> <br> <hr>
-        <div class="productitem"> 
-            <div class="itemimage">
-            <img src="/static/img/c10.jpg"  alt="product image">
-            </div>
-            <div class="itemname">Wireless Mouse</div>
-            <div class="itemprice">Price: Rs.700.00 </div>
-        </div>
-        <div class="productitem"> 
-            <div class="itemimage">
-            <img src="/static/img/c11.jpg"  alt="product image">
-            </div>
-            <div class="itemname">Pendriver</div>
-            <div class="itemprice">Price: Rs.900.00 </div>
-        </div>
-        <div class="productitem"> 
-            <div class="itemimage">
-            <img src="/static/img/c12.jpg"  alt="product image">
-            </div>
-            <div class="itemname">Logitech Speaker</div>
-            <div class="itemprice">Price: Rs.1300.00 </div>
-        </div>
-        
+        {% endfor %}
     </div>
-    </div>
+</div>
 {% endblock  %}
+
          
 ```
 ### people.html
-```
+```  
 {% extends "website/base.html" %}
+
 {% block content %}
-    <div class="id">
-        <div>
-            <div class="img">
-            <h2>FOUNDER AND CHAIRMAN</h2>
-            <img src="/static/img/chris.jpg" alt="chairman" height="270px" width="270px">
-            </div>  
-            <h3><u>CHRIS HEMSWORTH</u></h3> <br> <br><br>
+        <div class="row">
+        {% for people in peoples %}
+            <div class="column">                
+                <div class="designation"><strong><u></u>{{ people.designation }}</u></strong></div>
+                <img src="{{ people.photo.url }}" alt="executive image" width="270" height="270">
+                <div class="membername"><strong><u>{{ people.name }}</u></strong></div>
+            </div>
+            {% endfor %}
         </div>
-        <div>
-            <div class="img">
-            <h2>CHIEF EXECUTIVE OFFICER</h2>
-            <img src="/static/img/rdf.jpg" alt="chairman" height="270px" width="270px">
-        </div>            
-            <h3><u>ROBERT DOWNEY JUNIOR</u></h3> <br> <br> <br>
-        </div>
-
-        <div>
-            <div class="img">
-            <h2>DIRECTOR OF ENGINEERING</h2>
-            <img src="/static/img/tom.jpg" alt="chairman" height="270px" width="270px">
-        </div>
-            <h3><u>TOM CRUISE</u></h3> <br> <br> <br>
-        </div>
-        <div>
-            <div class="img">
-            <h2>SOFTWARE ANALYST AND CONSULTANT</h2>
-            <img src="/static/img/shinsike.jpg" alt="chairman" height="270px" width="270px">
-        </div>            
-            <h3><u>SHINSUKE NAKAMURA</u></h3> <br> <br> <br>
-        </div>
-        
-        <div>
-            <div class="img">
-            <h2>CHIEF FINANCIAL OFFICER</h2>
-            <img src="/static/img/evans.jpg" alt="chairman" height="270px" width="270px">
-        </div>           
-            <h3><u>CHRIS EVANS</u></h3> <br><br><br>
-        </div>
-        <div>
-            <div class="img">
-            <h2>MANAGING DIRECTOR</h2>
-            <img src="/static/img/rock.jpg" alt="chairman" height="270px" width="270px">
-        </div>          
-            <h3><u>DWAYNE JOHNSON</u></h3> <br><br><br>
-        </div>
-
-    </div>
 {% endblock  %}
 ```
 ### contact.html
@@ -268,6 +158,42 @@ Publish the website in the given URL.
 {% endblock %}
 ```
 
+### MODELS.PY
+```
+from django.db import models
+from django.contrib import admin
+
+# Create your models here.
+class people(models.Model):
+    name = models.CharField(max_length=100)
+    designation = models.CharField(max_length=100)
+    photo = models.ImageField(upload_to='photos/')
+
+class peopleAdmin(admin.ModelAdmin):
+    list_display = ('name', 'designation', 'photo')
+
+class products(models.Model):
+    name = models.CharField(max_length=100)
+    price = models.IntegerField()
+    photo = models.ImageField(upload_to='photos/')
+class productsAdmin(admin.ModelAdmin):
+    list_display = ('name', 'price', 'photo')
+```
+
+### ADMIN.PY:
+```
+from django.contrib import admin
+from .models import people,peopleAdmin
+from .models import products,productsAdmin
+
+
+# Register your models here.
+
+admin.site.register(people,peopleAdmin)
+
+admin.site.register(products,productsAdmin)
+
+```
 ## OUTPUT: 
 ![output](./static/img/homeoutput.jpg)
 
@@ -276,6 +202,14 @@ Publish the website in the given URL.
 ![output](./static/img/peopleout.jpg)
 
 ![output](./static/img/contout.jpg)
+
+### ADMIN PAGE:
+
+![output](./static/img/adminpeople.jpg)
+
+![output](./static/img/adminprod.jpg)
+
+
 
 ## CODE VALIDATION REPORT:
 ![output](./static/img/home.jpg)
