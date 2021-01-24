@@ -178,6 +178,7 @@ class products(models.Model):
     photo = models.ImageField(upload_to='photos/')
 class productsAdmin(admin.ModelAdmin):
     list_display = ('name', 'price', 'photo')
+
 ```
 
 ### ADMIN.PY:
@@ -195,7 +196,7 @@ admin.site.register(products,productsAdmin)
 
 ```
 ## OUTPUT: 
-![output](./static/img/homeoutput.jpg)
+![output](./static/img/homeout.jpg)
 
 ![output](./static/img/prodout.jpg)
 
